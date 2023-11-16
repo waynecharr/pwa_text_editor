@@ -22,13 +22,10 @@ module.exports = () => {
         template: './index.html',
         title: 'Webpack Plugin',
       }),
-      new MiniCssExtractPlugin(),
       new InjectManifest({
-        swSrc: './src/sw.js',
-        swDest: 'service-worker.js',
+        swSrc: './src-sw.js',
+        swDest: './src-sw.js',
       }),
-
-      new GenerateSW(),
       new WebpackPwaManifest({
         name: 'Text Editor',
         short_name: 'TE',
@@ -40,7 +37,7 @@ module.exports = () => {
         icons: [
           {
             //Don't know what this is doing yet. 
-            src: path.resolve('assets/images/logo.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
@@ -52,11 +49,7 @@ module.exports = () => {
       rules: [
         {
           test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource',
+          use: ['style-loader', 'css-loader'],
         },
         {
           test: /\.m?js$/,
