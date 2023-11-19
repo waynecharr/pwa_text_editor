@@ -35,7 +35,7 @@ This is a note text editor that has the ability to work both offline and online.
 
 # Instructions
 
-Enter any text you want on the screen. It should save whether online or offline. 
+Enter any text you want on the screen. It should save whether online or offline, if working correctly.
 
 To test the application within Crhome, under Network,  change where it says "No throttling" to "Offline" to test if the functionality note taker is able to save offline.
 
