@@ -9,7 +9,7 @@
   "license": "UNLICENSED",
   "engines": {
     "npm": "10.2.4",
-    "node": "18.17.1"
+    "node": "20.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
